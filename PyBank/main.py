@@ -26,8 +26,6 @@ with open(csvpath) as csvfile:
     #skip header row
     csv_header = next(csvreader)
 
-
-
     for row in csvreader:
         #count the number of rows in the file (which equals number of months)
         months += 1
@@ -80,6 +78,7 @@ print(f"Average Change: ${average_change_profits_loss}")
 print(f"Greatest Increase in Profits: {date_greatest_increase} (${greatest_increase_profits})")
 print(f"Greatest Decrease in Profts: {date_gratest_decrease} (${greatest_decrease_profits})")
 
+#print output to text file
 output_path = os.path.join("Analysis", "PyBank_Financial_Analysis.txt")
 with open(output_path, 'w') as textfile:
     textfile.write("Financial Analysis\n"
